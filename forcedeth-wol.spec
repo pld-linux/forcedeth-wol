@@ -66,5 +66,4 @@ fi
 %attr(754,root,root) /etc/rc.d/init.d/forcedeth-wol
 %attr(755,root,root) %{_sbindir}/pci-config
 
-%dir %{localedir}
-%lang(pl) %{localedir}/pl
+%lang(pl) %{localedir}/pl/LC_MESSAGES/forcedeth-wol.mo
