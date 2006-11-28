@@ -8,10 +8,9 @@ Group:		Networking
 Source0:	ftp://ep09.pld-linux.org/people/siefca/software/%{name}-%{version}.tar.gz
 # Source0-md5:	cae4cce72d9316a37106b03d9a2ba1aa
 Requires(post,preun):	/sbin/chkconfig
-Requires(post,preun):	rc-scripts
 Requires:	ethtool
 Requires:	rc-scripts
-BuildArch:	noarch
+ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		localedir	/etc/sysconfig/locale
@@ -29,7 +28,7 @@ karty, aby mog³a ona samodzielnie wej¶æ w stan u¶pienia. Sprawia to
 k³opoty z obs³ug± funkcji Wake-On-Lan. Ten pakiet implementuje
 obej¶cie, aby ta funkcjonalno¶æ by³a mo¿liwa. Do prawid³owego
 dzia³ania wymagany jest dodatkowo odpowiednio spreparowany modu³
-kernela forcedeth.
+j±dra forcedeth.
 
 %prep
 %setup -q
@@ -41,7 +40,6 @@ kernela forcedeth.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT/etc/rc.d/init.d
 
 %{__make} install \
