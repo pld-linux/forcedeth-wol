@@ -7,6 +7,7 @@ License:	GPL
 Group:		Networking
 Source0:	ftp://ep09.pld-linux.org/people/siefca/software/%{name}-%{version}.tar.gz
 # Source0-md5:	cae4cce72d9316a37106b03d9a2ba1aa
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires(post,preun):	/sbin/chkconfig
 Requires:	ethtool
 Requires:	rc-scripts
@@ -27,8 +28,8 @@ Sterowniki dla kart sieciowych nVidia nForce nie potrafi± tak ustawiæ
 karty, aby mog³a ona samodzielnie wej¶æ w stan u¶pienia. Sprawia to
 k³opoty z obs³ug± funkcji Wake-On-Lan. Ten pakiet implementuje
 obej¶cie, aby ta funkcjonalno¶æ by³a mo¿liwa. Do prawid³owego
-dzia³ania wymagany jest dodatkowo odpowiednio spreparowany modu³
-j±dra forcedeth.
+dzia³ania wymagany jest dodatkowo odpowiednio spreparowany modu³ j±dra
+forcedeth.
 
 %prep
 %setup -q
@@ -50,11 +51,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/chkconfig --add forcedeth-wol
-/etc/rc.d/init.d/forcedeth-wol start >/dev/null 2>&1
+%service forcedeth-wol restart
 
 %preun
 if [ "$1" = "0" ]; then
-	%service forcedeth-wol stop >/dev/null 2>&1
+	%service forcedeth-wol stop
 	/sbin/chkconfig --del forcedeth-wol
 fi
 
@@ -62,7 +63,6 @@ fi
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %doc doc/README*.txt doc/linux-*WON.patch
-
 %attr(754,root,root) /etc/rc.d/init.d/forcedeth-wol
 %attr(755,root,root) %{_sbindir}/pci-config
 
