@@ -1,5 +1,5 @@
 Summary:	Wake-On-Lan support for nVidia nForce ethernet drivers
-Summary(pl):	Wsparcie dla Wake-On-Lan dla kart sieciowych nVidia nForce
+Summary(pl.UTF-8):   Wsparcie dla Wake-On-Lan dla kart sieciowych nVidia nForce
 Name:		forcedeth-wol
 Version:	1.1
 Release:	1
@@ -23,12 +23,12 @@ sleep state. This causes problems with Wake-On-Lan feature. This
 package implements work-around to fix it. For fine working the patched
 forcedeth kernel driver is also required.
 
-%description -l pl
-Sterowniki dla kart sieciowych nVidia nForce nie potrafi± tak ustawiÊ
-karty, aby mog≥a ona samodzielnie wej∂Ê w stan u∂pienia. Sprawia to
-k≥opoty z obs≥ug± funkcji Wake-On-Lan. Ten pakiet implementuje
-obej∂cie, aby ta funkcjonalno∂Ê by≥a moøliwa. Do prawid≥owego
-dzia≥ania wymagany jest dodatkowo odpowiednio spreparowany modu≥ j±dra
+%description -l pl.UTF-8
+Sterowniki dla kart sieciowych nVidia nForce nie potrafiƒÖ tak ustawiƒá
+karty, aby mog≈Ça ona samodzielnie wej≈õƒá w stan u≈õpienia. Sprawia to
+k≈Çopoty z obs≈ÇugƒÖ funkcji Wake-On-Lan. Ten pakiet implementuje
+obej≈õcie, aby ta funkcjonalno≈õƒá by≈Ça mo≈ºliwa. Do prawid≈Çowego
+dzia≈Çania wymagany jest dodatkowo odpowiednio spreparowany modu≈Ç jƒÖdra
 forcedeth.
 
 %prep
