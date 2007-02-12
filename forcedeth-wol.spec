@@ -1,5 +1,5 @@
 Summary:	Wake-On-Lan support for nVidia nForce ethernet drivers
-Summary(pl.UTF-8):   Wsparcie dla Wake-On-Lan dla kart sieciowych nVidia nForce
+Summary(pl.UTF-8):	Wsparcie dla Wake-On-Lan dla kart sieciowych nVidia nForce
 Name:		forcedeth-wol
 Version:	1.1
 Release:	1
